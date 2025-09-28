@@ -1,5 +1,5 @@
 app_name = "investment"
-app_title = "Rasrochka biznesi uchun app"
+app_title = "Investment"
 app_publisher = "AsadStack"
 app_description = "Yangi loyiha"
 app_email = "asadbek.backend@gmail.com"
