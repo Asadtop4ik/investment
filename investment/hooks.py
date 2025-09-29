@@ -4,6 +4,9 @@ app_publisher = "AsadStack"
 app_description = "Yangi loyiha"
 app_email = "asadbek.backend@gmail.com"
 app_license = "mit"
+page_js = {
+    "installment-products": "public/js/installment_product.js"
+}
 
 # Apps
 # ------------------
@@ -241,4 +244,3 @@ app_license = "mit"
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-
