@@ -1,0 +1,113 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "MJZ-.######.",
+ "creation": "2025-09-29 15:53:14.680772",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "ism",
+  "familya",
+  "passport_id",
+  "telefon_raqam",
+  "manzil",
+  "column_break_pgpw",
+  "qoshimcha_raqam",
+  "jshshir",
+  "karta_raqam",
+  "passport__kopiya",
+  "rasm"
+ ],
+ "fields": [
+  {
+   "fieldname": "ism",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Ism",
+   "reqd": 1
+  },
+  {
+   "fieldname": "familya",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Familya",
+   "reqd": 1
+  },
+  {
+   "fieldname": "passport_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Passport Id",
+   "reqd": 1
+  },
+  {
+   "fieldname": "telefon_raqam",
+   "fieldtype": "Phone",
+   "in_list_view": 1,
+   "label": "Telefon Raqam",
+   "reqd": 1
+  },
+  {
+   "fieldname": "manzil",
+   "fieldtype": "Data",
+   "label": "Manzil",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_pgpw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "qoshimcha_raqam",
+   "fieldtype": "Phone",
+   "label": "Qo'shimcha Raqam"
+  },
+  {
+   "fieldname": "jshshir",
+   "fieldtype": "Data",
+   "label": "JSHSHIR"
+  },
+  {
+   "fieldname": "karta_raqam",
+   "fieldtype": "Data",
+   "label": "Karta Raqam"
+  },
+  {
+   "fieldname": "passport__kopiya",
+   "fieldtype": "Attach",
+   "label": "Passport  Kopiya"
+  },
+  {
+   "fieldname": "rasm",
+   "fieldtype": "Attach Image",
+   "label": "Rasm"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-09-29 16:11:08.528888",
+ "modified_by": "Administrator",
+ "module": "Investment",
+ "name": "Mijozlar",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
