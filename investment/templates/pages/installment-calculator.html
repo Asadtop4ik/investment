@@ -1,0 +1,49 @@
+<!-- templates/pages/installment-calculator.html -->
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<div class="container" style="max-width:900px; margin: 30px auto;">
+  <h2>Installment Calculator</h2>
+
+  <div id="fi_calc_form">
+    <div class="form-group">
+      <label>Tannarx (USD)</label>
+      <input id="fi_price" class="form-control" type="number" step="0.01" />
+    </div>
+
+    <div class="form-group">
+      <label>Boshlang'ich to'lov (USD)</label>
+      <input id="fi_down" class="form-control" type="number" step="0.01" />
+    </div>
+
+    <div class="form-group">
+      <label>Muddat (oy)</label>
+      <input id="fi_months" class="form-control" type="number" />
+    </div>
+
+    <div class="form-group">
+      <label>Oylik to'lov (USD)</label>
+      <input id="fi_monthly" class="form-control" type="number" step="0.01" />
+    </div>
+
+    <div style="text-align:center; margin-top:12px;">
+      <button class="btn btn-dark" id="fi_btn_calc">Hisobla</button>
+      <button class="btn btn-default" id="fi_btn_schedule">Jadval yarat</button>
+    </div>
+
+    <hr/>
+
+    <div id="fi_results">
+      <div><strong>Umumiy to'lov:</strong> <span id="fi_total">$0.00</span></div>
+      <div><strong>Sof foyda:</strong> <span id="fi_profit">$0.00</span></div>
+      <div><strong>Foiz %:</strong> <span id="fi_percent">0%</span></div>
+    </div>
+
+    <hr/>
+
+    <div id="fi_schedule_container"></div>
+  </div>
+</div>
+
+<script src="{{ '/assets/investment/js/installment-calculator.js'|asset }}"></script>
+{% endblock %}

@@ -1,0 +1,111 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-09-28 16:05:57.575747",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "tannarx",
+  "boshlangich_tolov",
+  "muddat",
+  "oylik_tolov",
+  "boshlanish_sanasi",
+  "umumiy_tolov",
+  "sof_foyda",
+  "foiz",
+  "action_buttons"
+ ],
+ "fields": [
+  {
+   "fieldname": "tannarx",
+   "fieldtype": "Currency",
+   "label": "Tannarx",
+   "options": "USD",
+   "reqd": 1
+  },
+  {
+   "fieldname": "boshlangich_tolov",
+   "fieldtype": "Currency",
+   "label": "Boshlang'ich to'lov",
+   "options": "USD",
+   "reqd": 1
+  },
+  {
+   "fieldname": "muddat",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Muddat",
+   "options": "USD",
+   "reqd": 1
+  },
+  {
+   "fieldname": "oylik_tolov",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Oylik to'lov",
+   "options": "USD",
+   "reqd": 1
+  },
+  {
+   "fieldname": "boshlanish_sanasi",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Boshlanish sanasi",
+   "reqd": 1
+  },
+  {
+   "fieldname": "umumiy_tolov",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Umumiy to'lov",
+   "options": "USD",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sof_foyda",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Sof foyda",
+   "options": "USD",
+   "read_only": 1
+  },
+  {
+   "fieldname": "foiz",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "label": "Foiz %",
+   "read_only": 1
+  },
+  {
+   "fieldname": "action_buttons",
+   "fieldtype": "HTML",
+   "label": "Action Buttons"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-09-29 15:15:56.238402",
+ "modified_by": "Administrator",
+ "module": "Investment",
+ "name": "Installment Calculator",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
