@@ -64,7 +64,16 @@ frappe.pages['installment_products'].on_page_load = function(wrapper) {
                 callback: (r) => {
                     if (r.message) {
                         suppliers = r.message.map(s => s.name);
+                        console.log('Supplierlar yuklandi:', suppliers); // Debug uchun
+                    } else {
+                        console.warn('Supplierlar topilmadi yoki xato:', r.exc);
+                        suppliers = []; // Agar xato bo‘lsa, bo‘sh massiv qoldirish
                     }
+                    resolve();
+                },
+                error: (err) => {
+                    console.error('Supplier yuklashda xato:', err);
+                    suppliers = [];
                     resolve();
                 }
             });
@@ -86,7 +95,7 @@ frappe.pages['installment_products'].on_page_load = function(wrapper) {
                     <td><input type="text" class="form-control" data-field="imei" placeholder="IMEI" value="${data.imei || ''}"></td>
                     <td><input type="text" class="form-control" data-field="icloud" placeholder="iCloud" value="${data.icloud || ''}"></td>
                     <td><input type="text" class="form-control" data-field="phone_number" placeholder="Telefon raqami" value="${data.phone_number || ''}"></td>
-                    <td><select class="form-select prod-supplier"></select></td>
+                    <td><select class="form-select prod-supplier" required></select></td>
                     <td class="text-center align-middle">
                         <button class="btn btn-sm btn-danger remove-row">X</button>
                     </td>
@@ -116,6 +125,7 @@ frappe.pages['installment_products'].on_page_load = function(wrapper) {
                                     suppliers.push(newSup.trim());
                                     page.main.find('.prod-supplier').each((i, s) => renderSupplierOptions($(s)));
                                     this.value = newSup.trim();
+                                    console.log('Yangi supplier qo‘shildi:', newSup); // Debug uchun
                                 } else {
                                     showError('Yangi supplier qo\'shishda xato: ' + r.exc);
                                 }
@@ -207,7 +217,7 @@ frappe.pages['installment_products'].on_page_load = function(wrapper) {
                     method: 'frappe.client.insert',
                     args: {
                         doc: {
-                            doctype: 'installment_product', // Doctype nomini o'zgartirdik
+                            doctype: 'installment_product',
                             product_name: doc.product_name,
                             price: doc.price,
                             imei: doc.imei,
@@ -222,10 +232,9 @@ frappe.pages['installment_products'].on_page_load = function(wrapper) {
                             savedCount++;
                             if (savedCount === products.length) {
                                 showSuccessMessage('Mahsulotlar muvaffaqiyatli saqlandi!');
-                                // Standart list sahifasiga o'tish (birinchi rasmdek ko'rinish)
                                 setTimeout(() => {
-                                    frappe.set_route('list', 'installment_product'); // Doctype nomini o'zgartirdik
-                                }, 2000); // Xabar ko'rinib turgan paytda kutish
+                                    frappe.set_route('list', 'installment_product');
+                                }, 2000);
                             }
                         } else {
                             showError('Xato: ' + r.exc);
@@ -256,15 +265,23 @@ frappe.pages['installment_products'].on_page_load = function(wrapper) {
     // Supplier options render
     function renderSupplierOptions(selectEl, current = "") {
         selectEl.empty();
-        suppliers.forEach(s => {
-            const opt = $('<option>').val(s).text(s);
+        if (suppliers.length > 0) {
+            suppliers.forEach(s => {
+                const opt = $('<option>').val(s).text(s);
+                selectEl.append(opt);
+            });
+        } else {
+            console.warn('Supplierlar ro‘yxati bo‘sh!');
+            const opt = $('<option>').val("").text("Supplierlar yuklanmadi");
             selectEl.append(opt);
-        });
+        }
         const addOpt = $('<option>').val("add_new").text("+ Yangi yetkazib beruvchi qo'shish");
         selectEl.append(addOpt);
 
         if (current && suppliers.includes(current)) {
             selectEl.val(current);
+        } else if (!current && suppliers.length > 0) {
+            selectEl.val(suppliers[0]); // Avvalgi qiymat bo‘lmasa, birinchi supplier’ni tanlash
         }
     }
 };
