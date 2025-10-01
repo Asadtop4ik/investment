@@ -8,6 +8,11 @@ page_js = {
     "installment-products": "public/js/installment_product.js"
 }
 
+app_include_js = [
+    "investment/page/installment-page/installment_page.js"
+]
+app_include_css = []
+
 # Apps
 # ------------------
 
