@@ -4,14 +4,10 @@ app_publisher = "AsadStack"
 app_description = "Yangi loyiha"
 app_email = "asadbek.backend@gmail.com"
 app_license = "mit"
-page_js = {
-    "installment-products": "public/js/installment_product.js"
-}
-
+# hooks.py
 app_include_js = [
-    "investment/page/installment-page/installment_page.js"
+    "investment/page/installment_page/installment_page.js"
 ]
-app_include_css = []
 
 # Apps
 # ------------------
