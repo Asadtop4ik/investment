@@ -4,6 +4,12 @@
   "module": "Investment",
   "custom": 1,
   "autoname": "hash",
+  "title_field": "product_name",
+  "issingle": 0,
+  "istable": 0,
+  "hide_toolbar": 0,
+  "track_changes": 1,
+  "search_fields": "product_name, imei, phone_number",
   "fields": [
     {
       "fieldname": "product_name",
@@ -34,15 +40,15 @@
       "fieldname": "price",
       "label": "Narx",
       "fieldtype": "Currency",
-      "in_list_view": 1,
-      "precision": 2
+      "precision": 2,
+      "in_list_view": 1
     },
     {
       "fieldname": "supplier",
       "label": "Yetkazib beruvchi",
       "fieldtype": "Link",
       "options": "Supplier",
-      "in_list_view": 1
+      "in_list_view": 0
     },
     {
       "fieldname": "active",
@@ -64,16 +70,7 @@
       "read": 1,
       "write": 1,
       "create": 1,
-      "delete": 1,
-      "submit": 0,
-      "cancel": 0,
-      "amend": 0
+      "delete": 1
     }
-  ],
-  "issingle": 0,
-  "istable": 0,
-  "hide_toolbar": 0,
-  "show_title_field": "product_name",
-  "search_fields": "product_name, imei",
-  "track_changes": 1
+  ]
 }
