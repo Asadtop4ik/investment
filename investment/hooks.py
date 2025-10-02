@@ -6,9 +6,8 @@ app_email = "asadbek.backend@gmail.com"
 app_license = "mit"
 # hooks.py
 page_js = {
-    "installment_products": "investment/page/installment_products/installment_products.js"
+    "installment-products": "public/js/installment_product.js",
 }
-
 
 # Apps
 # ------------------
