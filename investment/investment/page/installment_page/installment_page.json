@@ -1,0 +1,11 @@
+{
+  "doctype": "Page",
+  "name": "installment-page",
+  "page_name": "installment-page",
+  "module": "Investment",
+  "title": "Installment Page",
+  "roles": [
+    { "role": "Operator" }
+  ],
+  "standard": "Yes"
+}

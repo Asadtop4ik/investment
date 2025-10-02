@@ -109,3 +109,30 @@ def create_schedule(name):
 
     doc.save()
     return True
+@frappe.whitelist()
+def save_and_continue(doc):
+    # doc kelyapti -> string yoki dict bo‘lishi mumkin
+    if isinstance(doc, str):
+        import json
+        try:
+            doc = json.loads(doc)
+        except Exception:
+            return "error"
+
+    d = frappe._dict(doc or {})
+
+    # Bu yerda kelgan ma’lumotlarni saqlash yoki log qilish mumkin
+    # Masalan, log uchun:
+    frappe.logger().info(f"Saqlangan ma'lumot: {d}")
+
+    # Xohlasa doctype ichiga ham saqlash mumkin
+    new_doc = frappe.new_doc("Installment Calculator")
+    new_doc.tannarx = d.get("tannarx")
+    new_doc.boshlangich_tolov = d.get("boshlangich_tolov")
+    new_doc.muddat = d.get("muddat")
+    new_doc.oylik_tolov = d.get("oylik_tolov")
+    new_doc.boshlanish_sanasi = d.get("boshlanish_sanasi")
+    new_doc.insert(ignore_permissions=True)
+
+    return "success"
+
