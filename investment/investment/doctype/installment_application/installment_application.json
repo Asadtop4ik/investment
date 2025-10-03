@@ -1,0 +1,57 @@
+{
+  "doctype": "DocType",
+  "name": "Installment Application",
+  "module": "Investment",
+  "autoname": "APP-.YYYY.-.#####",
+  "track_changes": 1,
+  "is_submittable": 0,
+  "field_order": [
+    "section_step1",
+    "tannarx",
+    "boshlangich_tolov",
+    "muddat",
+    "oylik_tolov",
+    "boshlanish_sanasi",
+    "column_break_s1",
+    "umumiy_tolov",
+    "foiz_percent",
+    "foyda_som",
+    "section_step2",
+    "application_products",
+    "section_step3",
+    "customer",
+    "branch",
+    "section_meta",
+    "current_step",
+    "status"
+  ],
+  "fields": [
+    { "fieldname": "section_step1", "fieldtype": "Section Break", "label": "Step 1: Kalkulyator" },
+    { "fieldname": "tannarx", "label": "Tannarx", "fieldtype": "Currency", "options": "USD", "reqd": 1 },
+    { "fieldname": "boshlangich_tolov", "label": "Boshlang'ich to'lov", "fieldtype": "Currency", "options": "USD", "reqd": 1 },
+    { "fieldname": "muddat", "label": "Muddat (oy)", "fieldtype": "Int", "reqd": 1 },
+    { "fieldname": "oylik_tolov", "label": "Oylik to'lov", "fieldtype": "Currency", "options": "USD", "reqd": 1 },
+    { "fieldname": "boshlanish_sanasi", "label": "Boshlanish sanasi", "fieldtype": "Date", "reqd": 1 },
+
+    { "fieldname": "column_break_s1", "fieldtype": "Column Break" },
+    { "fieldname": "umumiy_tolov", "label": "Umumiy to'lov", "fieldtype": "Currency", "options": "USD", "read_only": 1 },
+    { "fieldname": "foiz_percent", "label": "Foiz %", "fieldtype": "Percent", "read_only": 1 },
+    { "fieldname": "foyda_som", "label": "Foida", "fieldtype": "Currency", "options": "USD", "read_only": 1 },
+
+    { "fieldname": "section_step2", "fieldtype": "Section Break", "label": "Step 2: Mahsulotlar" },
+    { "fieldname": "application_products", "label": "Mahsulotlar", "fieldtype": "Table", "options": "Application Product" },
+
+    { "fieldname": "section_step3", "fieldtype": "Section Break", "label": "Step 3: Mijoz" },
+    { "fieldname": "customer", "label": "Mijoz", "fieldtype": "Link", "options": "Mijozlar", "reqd": 1 },
+    { "fieldname": "branch", "label": "Filial", "fieldtype": "Data" },
+
+    { "fieldname": "section_meta", "fieldtype": "Section Break", "label": "Meta" },
+    { "fieldname": "current_step", "label": "Current Step", "fieldtype": "Int", "default": "1" },
+    { "fieldname": "status", "label": "Status", "fieldtype": "Select", "options": "In Progress\nCompleted\nCancelled", "default": "In Progress" }
+  ],
+  "permissions": [
+    { "role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1 }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC"
+}

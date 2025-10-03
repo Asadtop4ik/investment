@@ -1,0 +1,16 @@
+{
+  "doctype": "DocType",
+  "name": "Application Product",
+  "module": "Investment",
+  "istable": 1,
+  "track_changes": 1,
+  "field_order": ["product_name","imei","price","supplier","comment"],
+  "fields": [
+    { "fieldname": "product_name", "label": "Mahsulot nomi", "fieldtype": "Data", "in_list_view": 1, "reqd": 1 },
+    { "fieldname": "imei", "label": "IMEI", "fieldtype": "Data", "in_list_view": 1 },
+    { "fieldname": "price", "label": "Narx", "fieldtype": "Currency", "options": "USD", "in_list_view": 1 },
+    { "fieldname": "supplier", "label": "Yetkazib beruvchi", "fieldtype": "Link", "options": "Supplier", "in_list_view": 1 },
+    { "fieldname": "comment", "label": "Izoh", "fieldtype": "Small Text" }
+  ],
+  "permissions": []
+}

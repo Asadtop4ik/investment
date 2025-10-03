@@ -1,0 +1,8 @@
+{
+  "doctype": "Page",
+  "name": "installment-contract-review",
+  "module": "Investment",
+  "title": "Installment Contract Review",
+  "icon": "octicon octicon-file-text",
+  "standard": "Yes"
+}
