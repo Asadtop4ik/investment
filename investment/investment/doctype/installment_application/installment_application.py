@@ -5,7 +5,7 @@ class InstallmentApplication(Document):
     def validate(self):
         # 1. Umumiy summa (mahsulotlar bo‘yicha)
         total_price = 0
-        for item in self.mahsulotlar:
+        for item in self.application_products:
             if item.price:
                 total_price += item.price
         self.umumiy_summa = total_price

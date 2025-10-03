@@ -29,6 +29,7 @@
     "tolangan_summa",
     "qolgan_summa",
     "application_date",
+    "tolov_jadvali",
     "status",
 
     "section_meta",
@@ -59,6 +60,7 @@
     { "fieldname": "tolangan_summa", "label": "To'langan summa", "fieldtype": "Currency", "read_only": 1, "in_list_view": 1, "default": "0.0" },
     { "fieldname": "qolgan_summa", "label": "Qolgan summa", "fieldtype": "Currency", "read_only": 1, "in_list_view": 1, "default": "0.0" },
     { "fieldname": "application_date", "label": "Ariza sanasi", "fieldtype": "Date", "default": "Today", "read_only": 1, "in_list_view": 1},
+    {"fieldname": "tolov_jadvali", "label": "To'lov jadvali", "fieldtype": "Table", "options": "Installment Schedule"},
     { "fieldname": "status", "label": "Status", "fieldtype": "Select", "options": "Draft\nActive\nPaid\nOverdue", "default": "Draft", "in_list_view": 1 },
 
     { "fieldname": "section_meta", "fieldtype": "Section Break", "label": "Meta" },
