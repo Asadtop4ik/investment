@@ -5,9 +5,10 @@ app_description = "Yangi loyiha"
 app_email = "asadbek.backend@gmail.com"
 app_license = "mit"
 # hooks.py
-app_include_js = [
-    "investment/page/installment_page/installment_page.js"
-]
+page_js = {
+    "installment_products": "investment/page/installment_products/installment_products.js"
+}
+
 
 # Apps
 # ------------------
