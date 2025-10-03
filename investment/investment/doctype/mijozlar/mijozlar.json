@@ -15,8 +15,10 @@
   "qoshimcha_raqam",
   "jshshir",
   "karta_raqam",
-  "passport__kopiya",
-  "rasm"
+  "passport_nusxa",
+  "rasm",
+  "section_break_vsar",
+  "sales_history"
  ],
  "fields": [
   {
@@ -38,13 +40,6 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Passport Id",
-   "reqd": 1
-  },
-  {
-   "fieldname": "telefon_raqam",
-   "fieldtype": "Phone",
-   "in_list_view": 1,
-   "label": "Telefon Raqam",
    "reqd": 1
   },
   {
@@ -73,20 +68,36 @@
    "label": "Karta Raqam"
   },
   {
-   "fieldname": "passport__kopiya",
-   "fieldtype": "Attach",
-   "label": "Passport  Kopiya"
-  },
-  {
    "fieldname": "rasm",
    "fieldtype": "Attach Image",
    "label": "Rasm"
+  },
+  {
+   "fieldname": "telefon_raqam",
+   "fieldtype": "Data",
+   "label": "Telefon raqam",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_vsar",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sales_history",
+   "fieldtype": "Table",
+   "label": "Sales History",
+   "options": "Sales Item"
+  },
+  {
+   "fieldname": "passport_nusxa",
+   "fieldtype": "Attach",
+   "label": "Passport Nusxa"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-29 16:11:08.528888",
+ "modified": "2025-10-03 14:16:07.965121",
  "modified_by": "Administrator",
  "module": "Investment",
  "name": "Mijozlar",
