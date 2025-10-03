@@ -16,14 +16,22 @@
     "umumiy_tolov",
     "foiz_percent",
     "foyda_som",
+
     "section_step2",
     "application_products",
+
     "section_step3",
     "customer",
     "branch",
+
+    "section_step4",
+    "umumiy_summa",
+    "tolangan_summa",
+    "qolgan_summa",
+    "status",
+
     "section_meta",
-    "current_step",
-    "status"
+    "current_step"
   ],
   "fields": [
     { "fieldname": "section_step1", "fieldtype": "Section Break", "label": "Step 1: Kalkulyator" },
@@ -45,9 +53,14 @@
     { "fieldname": "customer", "label": "Mijoz", "fieldtype": "Link", "options": "Mijozlar", "reqd": 1 },
     { "fieldname": "branch", "label": "Filial", "fieldtype": "Data" },
 
+    { "fieldname": "section_step4", "fieldtype": "Section Break", "label": "Step 4: Yakuniy hisob" },
+    { "fieldname": "umumiy_summa", "label": "Umumiy summa", "fieldtype": "Currency", "read_only": 1, "in_list_view": 1, "default": "0.0" },
+    { "fieldname": "tolangan_summa", "label": "To'langan summa", "fieldtype": "Currency", "read_only": 1, "in_list_view": 1, "default": "0.0" },
+    { "fieldname": "qolgan_summa", "label": "Qolgan summa", "fieldtype": "Currency", "read_only": 1, "in_list_view": 1, "default": "0.0" },
+    { "fieldname": "status", "label": "Status", "fieldtype": "Select", "options": "Draft\nActive\nPaid\nOverdue", "default": "Draft", "in_list_view": 1 },
+
     { "fieldname": "section_meta", "fieldtype": "Section Break", "label": "Meta" },
-    { "fieldname": "current_step", "label": "Current Step", "fieldtype": "Int", "default": "1" },
-    { "fieldname": "status", "label": "Status", "fieldtype": "Select", "options": "In Progress\nCompleted\nCancelled", "default": "In Progress" }
+    { "fieldname": "current_step", "label": "Current Step", "fieldtype": "Int", "default": "1" }
   ],
   "permissions": [
     { "role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1 }
