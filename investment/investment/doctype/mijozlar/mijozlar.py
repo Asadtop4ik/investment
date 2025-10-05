@@ -27,7 +27,7 @@ class Mijozlar(Document):
             self.telefon_raqam = cust.get("telefon_raqam") or self.telefon_raqam
             self.manzil = cust.get("manzil") or self.manzil
             self.rasm = cust.get("rasm") or self.rasm
-            self.passport_kopiya = cust.get("passport_nusxa") or self.passport_kopiya
+            self.passport_nusxa = cust.get("passport_nusxa") or self.passport_nusxa
 
 
         # Eski tarixni o'chirib tashlaymiz
