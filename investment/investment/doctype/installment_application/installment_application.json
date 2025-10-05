@@ -1,74 +1,263 @@
 {
+  "actions": [],
+  "allow_rename": 1,
+  "autoname": "format:INV-APP-{#####}",
+  "creation": "2025-10-05 14:30:00.000000",
   "doctype": "DocType",
-  "name": "Installment Application",
-  "module": "Investment",
-  "autoname": "APP-.YYYY.-.#####",
-  "track_changes": 1,
-  "is_submittable": 0,
+  "engine": "InnoDB",
   "field_order": [
-    "section_step1",
-    "tannarx",
-    "boshlangich_tolov",
-    "muddat",
-    "oylik_tolov",
-    "boshlanish_sanasi",
-    "column_break_s1",
-    "umumiy_tolov",
-    "foiz_percent",
-    "foyda_som",
-
-    "section_step2",
-    "application_products",
-
-    "section_step3",
+    "customer_section",
     "customer",
-    "branch",
-
-    "section_step4",
-    "umumiy_summa",
-    "tolangan_summa",
-    "qolgan_summa",
+    "customer_name",
+    "customer_phone",
+    "column_break_1",
     "application_date",
-    "tolov_jadvali",
     "status",
-
-    "section_meta",
-    "current_step"
+    "sales_person",
+    "section_break_2",
+    "products",
+    "section_break_3",
+    "calculator",
+    "total_amount",
+    "down_payment",
+    "column_break_2",
+    "installment_period",
+    "monthly_payment",
+    "start_date",
+    "section_break_4",
+    "total_paid",
+    "remaining_amount",
+    "profit",
+    "column_break_3",
+    "profit_percentage",
+    "next_payment_date",
+    "payment_status",
+    "section_break_5",
+    "notes",
+    "attachments"
   ],
   "fields": [
-    { "fieldname": "section_step1", "fieldtype": "Section Break", "label": "Step 1: Kalkulyator" },
-    { "fieldname": "tannarx", "label": "Tannarx", "fieldtype": "Currency", "options": "USD", "reqd": 1 },
-    { "fieldname": "boshlangich_tolov", "label": "Boshlang'ich to'lov", "fieldtype": "Currency", "options": "USD", "reqd": 1 },
-    { "fieldname": "muddat", "label": "Muddat (oy)", "fieldtype": "Int", "reqd": 1 },
-    { "fieldname": "oylik_tolov", "label": "Oylik to'lov", "fieldtype": "Currency", "options": "USD", "reqd": 1 },
-    { "fieldname": "boshlanish_sanasi", "label": "Boshlanish sanasi", "fieldtype": "Date", "reqd": 1 },
-
-    { "fieldname": "column_break_s1", "fieldtype": "Column Break" },
-    { "fieldname": "umumiy_tolov", "label": "Umumiy to'lov", "fieldtype": "Currency", "options": "USD", "read_only": 1 },
-    { "fieldname": "foiz_percent", "label": "Foiz %", "fieldtype": "Percent", "read_only": 1 },
-    { "fieldname": "foyda_som", "label": "Foida", "fieldtype": "Currency", "options": "USD", "read_only": 1 },
-
-    { "fieldname": "section_step2", "fieldtype": "Section Break", "label": "Step 2: Mahsulotlar" },
-    { "fieldname": "application_products", "label": "Mahsulotlar", "fieldtype": "Table", "options": "Application Product" },
-
-    { "fieldname": "section_step3", "fieldtype": "Section Break", "label": "Step 3: Mijoz" },
-    { "fieldname": "customer", "label": "Mijoz", "fieldtype": "Link", "options": "Mijozlar", "reqd": 1 },
-    { "fieldname": "branch", "label": "Filial", "fieldtype": "Data" },
-
-    { "fieldname": "section_step4", "fieldtype": "Section Break", "label": "Step 4: Yakuniy hisob" },
-    { "fieldname": "umumiy_summa", "label": "Umumiy summa", "fieldtype": "Currency", "read_only": 1, "in_list_view": 1, "default": "0.0" },
-    { "fieldname": "tolangan_summa", "label": "To'langan summa", "fieldtype": "Currency", "read_only": 1, "in_list_view": 1, "default": "0.0" },
-    { "fieldname": "qolgan_summa", "label": "Qolgan summa", "fieldtype": "Currency", "read_only": 1, "in_list_view": 1, "default": "0.0" },
-    { "fieldname": "application_date", "label": "Ariza sanasi", "fieldtype": "Date", "default": "Today", "read_only": 1, "in_list_view": 1},
-    {"fieldname": "tolov_jadvali", "label": "To'lov jadvali", "fieldtype": "Table", "options": "Installment Schedule"},
-    { "fieldname": "status", "label": "Status", "fieldtype": "Select", "options": "Draft\nActive\nPaid\nOverdue", "default": "Draft", "in_list_view": 1 },
-
-    { "fieldname": "section_meta", "fieldtype": "Section Break", "label": "Meta" },
-    { "fieldname": "current_step", "label": "Current Step", "fieldtype": "Int", "default": "1" }
+    {
+      "fieldname": "customer_section",
+      "fieldtype": "Section Break",
+      "label": "Mijoz ma'lumotlari"
+    },
+    {
+      "fieldname": "customer",
+      "fieldtype": "Link",
+      "label": "Mijoz",
+      "options": "Mijozlar",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "customer_name",
+      "fieldtype": "Data",
+      "label": "Mijoz ismi",
+      "read_only": 1,
+      "fetch_from": "customer.ism"
+    },
+    {
+      "fieldname": "customer_phone",
+      "fieldtype": "Data",
+      "label": "Telefon",
+      "read_only": 1,
+      "fetch_from": "customer.telefon_raqam"
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "application_date",
+      "fieldtype": "Date",
+      "label": "Ariza sanasi",
+      "default": "Today",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Holat",
+      "options": "Draft\nApproved\nActive\nCompleted\nCancelled",
+      "default": "Draft",
+      "reqd": 1,
+      "in_list_view": 1,
+      "in_standard_filter": 1
+    },
+    {
+      "fieldname": "sales_person",
+      "fieldtype": "Link",
+      "label": "Sotuvchi",
+      "options": "User"
+    },
+    {
+      "fieldname": "section_break_2",
+      "fieldtype": "Section Break",
+      "label": "Mahsulotlar"
+    },
+    {
+      "fieldname": "products",
+      "fieldtype": "Table",
+      "label": "Mahsulotlar ro'yxati",
+      "options": "Application Product",
+      "reqd": 1
+    },
+    {
+      "fieldname": "section_break_3",
+      "fieldtype": "Section Break",
+      "label": "To'lov ma'lumotlari"
+    },
+    {
+      "fieldname": "calculator",
+      "fieldtype": "Link",
+      "label": "Kalkulyator",
+      "options": "Installment Calculator",
+      "read_only": 1
+    },
+    {
+      "fieldname": "total_amount",
+      "fieldtype": "Currency",
+      "label": "Umumiy summa",
+      "options": "USD",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "down_payment",
+      "fieldtype": "Currency",
+      "label": "Boshlang'ich to'lov",
+      "options": "USD",
+      "reqd": 1
+    },
+    {
+      "fieldname": "column_break_2",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "installment_period",
+      "fieldtype": "Int",
+      "label": "Muddat (oy)",
+      "reqd": 1
+    },
+    {
+      "fieldname": "monthly_payment",
+      "fieldtype": "Currency",
+      "label": "Oylik to'lov",
+      "options": "USD",
+      "reqd": 1
+    },
+    {
+      "fieldname": "start_date",
+      "fieldtype": "Date",
+      "label": "Boshlanish sanasi",
+      "reqd": 1
+    },
+    {
+      "fieldname": "section_break_4",
+      "fieldtype": "Section Break",
+      "label": "To'lov holati"
+    },
+    {
+      "fieldname": "total_paid",
+      "fieldtype": "Currency",
+      "label": "Jami to'langan",
+      "options": "USD",
+      "read_only": 1,
+      "default": "0"
+    },
+    {
+      "fieldname": "remaining_amount",
+      "fieldtype": "Currency",
+      "label": "Qoldiq",
+      "options": "USD",
+      "read_only": 1
+    },
+    {
+      "fieldname": "profit",
+      "fieldtype": "Currency",
+      "label": "Foyda",
+      "options": "USD",
+      "read_only": 1
+    },
+    {
+      "fieldname": "column_break_3",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "profit_percentage",
+      "fieldtype": "Percent",
+      "label": "Foyda %",
+      "read_only": 1
+    },
+    {
+      "fieldname": "next_payment_date",
+      "fieldtype": "Date",
+      "label": "Keyingi to'lov sanasi",
+      "read_only": 1
+    },
+    {
+      "fieldname": "payment_status",
+      "fieldtype": "Select",
+      "label": "To'lov holati",
+      "options": "On Time\nOverdue\nCompleted",
+      "default": "On Time"
+    },
+    {
+      "fieldname": "section_break_5",
+      "fieldtype": "Section Break",
+      "label": "Qo'shimcha"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Text Editor",
+      "label": "Izohlar"
+    },
+    {
+      "fieldname": "attachments",
+      "fieldtype": "Attach",
+      "label": "Qo'shimcha fayllar"
+    }
   ],
+  "grid_page_length": 50,
+  "index_web_pages_for_search": 1,
+  "links": [],
+  "modified": "2025-10-05 14:30:00.000000",
+  "modified_by": "Administrator",
+  "module": "Investment",
+  "name": "Installment Application",
+  "naming_rule": "Expression",
+  "owner": "Administrator",
   "permissions": [
-    { "role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1 }
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Sales User",
+      "share": 1,
+      "write": 1
+    }
   ],
   "sort_field": "modified",
-  "sort_order": "DESC"
+  "sort_order": "DESC",
+  "states": [],
+  "title_field": "customer_name",
+  "track_changes": 1
 }

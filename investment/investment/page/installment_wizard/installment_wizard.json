@@ -1,0 +1,27 @@
+{
+ "content": null,
+ "creation": "2025-10-05 14:02:25.688226",
+ "docstatus": 0,
+ "doctype": "Page",
+  "icon": "octicon octicon-credit-card",
+ "idx": 0,
+ "modified": "2025-10-05 14:02:25.688226",
+ "modified_by": "Administrator",
+ "module": "Investment",
+ "name": "installment_wizard",
+ "owner": "Administrator",
+ "page_name": "installment_wizard",
+ "roles": [
+    {
+      "role": "System Manager"
+    },
+    {
+      "role": "Sales User"
+    }
+  ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "Nasiya Ariza Wizard"
+}
