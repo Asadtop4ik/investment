@@ -1,11 +1,26 @@
 {
-  "doctype": "Page",
-  "name": "installment-page",
-  "page_name": "installment-page",
-  "module": "Investment",
-  "title": "Installment Page",
-  "roles": [
-    { "role": "Operator" }
-  ],
-  "standard": "Yes"
+ "content": null,
+ "creation": "2025-10-02 15:38:43.099145",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2025-10-05 10:57:48.256479",
+ "modified_by": "Administrator",
+ "module": "Investment",
+ "name": "installment-page",
+ "owner": "Administrator",
+ "page_name": "installment-page",
+ "roles": [
+  {
+   "role": "Administrator"
+  },
+  {
+   "role": "All"
+  }
+ ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "Installment Page"
 }
