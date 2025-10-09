@@ -1,7 +1,7 @@
 frappe.pages['installment_wizard'].on_page_load = function(wrapper) {
     let page = frappe.ui.make_app_page({
         parent: wrapper,
-        title: 'Nasiya Ariza Wizard',
+        title: 'Shartnoma',
         single_column: true
     });
 
@@ -250,7 +250,7 @@ class InstallmentWizard {
 
         const umumiy = boshlangich + (oylik * muddat);
         const foyda = umumiy - tannarx;
-        const foiz = (foyda / tannarx) * 100;
+        const foiz = (foyda / (tannarx-boshlangich)) * 100;
 
         this.wizard_data.calculator = {
             tannarx, boshlangich_tolov: boshlangich, muddat,
