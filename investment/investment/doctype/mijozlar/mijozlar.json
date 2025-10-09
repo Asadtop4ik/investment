@@ -1,26 +1,49 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "MJZ-.######.",
  "creation": "2025-09-29 15:53:14.680772",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "passport_id",
+  "check_customer_button",
+  "section_break_basic",
   "ism",
   "familya",
-  "passport_id",
-  "telefon_raqam",
-  "manzil",
-  "column_break_pgpw",
-  "qoshimcha_raqam",
   "jshshir",
+  "column_break_pgpw",
+  "telefon_raqam",
+  "qoshimcha_raqam",
+  "manzil",
   "karta_raqam",
+  "section_break_documents",
   "passport_nusxa",
+  "column_break_photo",
   "rasm",
   "section_break_vsar",
   "sales_history"
  ],
  "fields": [
+  {
+   "bold": 1,
+   "fieldname": "passport_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Passport ID",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "check_customer_button",
+   "fieldtype": "Button",
+   "label": "Mijozni tekshirish",
+   "options": "check_existing_customer"
+  },
+  {
+   "fieldname": "section_break_basic",
+   "fieldtype": "Section Break",
+   "label": "Asosiy ma'lumotlar"
+  },
   {
    "fieldname": "ism",
    "fieldtype": "Data",
@@ -36,11 +59,26 @@
    "reqd": 1
   },
   {
-   "fieldname": "passport_id",
+   "fieldname": "jshshir",
    "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Passport Id",
+   "label": "JSHSHIR",
+   "length": 14
+  },
+  {
+   "fieldname": "column_break_pgpw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "telefon_raqam",
+   "fieldtype": "Data",
+   "label": "Telefon raqam",
+   "options": "Phone",
    "reqd": 1
+  },
+  {
+   "fieldname": "qoshimcha_raqam",
+   "fieldtype": "Phone",
+   "label": "Qo'shimcha Raqam"
   },
   {
    "fieldname": "manzil",
@@ -49,59 +87,49 @@
    "reqd": 1
   },
   {
-   "fieldname": "column_break_pgpw",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "qoshimcha_raqam",
-   "fieldtype": "Phone",
-   "label": "Qo'shimcha Raqam"
-  },
-  {
-   "fieldname": "jshshir",
-   "fieldtype": "Data",
-   "label": "JSHSHIR"
-  },
-  {
    "fieldname": "karta_raqam",
    "fieldtype": "Data",
    "label": "Karta Raqam"
   },
   {
-   "fieldname": "rasm",
-   "fieldtype": "Attach Image",
-   "label": "Rasm"
+   "fieldname": "section_break_documents",
+   "fieldtype": "Section Break",
+   "label": "Hujjatlar"
   },
   {
-   "fieldname": "telefon_raqam",
-   "fieldtype": "Data",
-   "label": "Telefon raqam",
-   "reqd": 1
+   "fieldname": "passport_nusxa",
+   "fieldtype": "Attach",
+   "label": "Passport Nusxasi"
+  },
+  {
+   "fieldname": "column_break_photo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rasm",
+   "fieldtype": "Attach Image",
+   "label": "Mijoz rasmi"
   },
   {
    "fieldname": "section_break_vsar",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Sotuvlar tarixi"
   },
   {
    "fieldname": "sales_history",
    "fieldtype": "Table",
    "label": "Sales History",
    "options": "Sales Item"
-  },
-  {
-   "fieldname": "passport_nusxa",
-   "fieldtype": "Attach",
-   "label": "Passport Nusxa"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-03 14:16:07.965121",
+ "modified": "2025-10-08 16:07:43.427430",
  "modified_by": "Administrator",
  "module": "Investment",
  "name": "Mijozlar",
- "naming_rule": "Expression (old style)",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -115,10 +143,23 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales User",
+   "share": 1,
+   "write": 1
   }
  ],
  "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "ism",
+ "track_changes": 1
 }
