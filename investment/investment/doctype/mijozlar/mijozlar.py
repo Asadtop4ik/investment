@@ -71,7 +71,7 @@ def fetch_customer_data(passport_id):
         apps = frappe.get_all(
             "Installment Application",
             filters={"customer": customer["name"]},
-            fields=["name", "application_date", "umumiy_summa", "status"],
+            fields=["name", "application_date", "total_amount", "status"],
             order_by="application_date desc"
         )
 
@@ -87,7 +87,7 @@ def fetch_customer_data(passport_id):
             history.append({
                 "sana": app["application_date"],     # endi ariza sanasi
                 "maxsulotlar": product_names,
-                "narx": app["umumiy_summa"],
+                "narx": app["total_amount"],
                 "status": app["status"]
             })
 
