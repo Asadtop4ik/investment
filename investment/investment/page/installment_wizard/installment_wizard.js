@@ -384,13 +384,22 @@ class InstallmentWizard {
                     reqd: 1,
                     default: editData.price || 0
                 },
-                {
+                 {
                     fieldname: 'supplier',
                     label: 'Yetkazib beruvchi',
                     fieldtype: 'Link',
                     options: 'Supplier',
                     default: editData.supplier || ''
                 },
+                {	fieldname:'icloud',
+                	label:'iClud',
+                	fieldtype:'Data',
+                },
+                {	fieldname:'telefon_raqam',
+                	label:'Telefon raqam',
+                	fieldtype:'Data',
+                },
+
                 {
                     fieldname: 'comment',
                     label: 'Izoh',
